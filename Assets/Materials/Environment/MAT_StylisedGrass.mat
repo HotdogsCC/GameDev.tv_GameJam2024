@@ -143,7 +143,7 @@ Material:
     - _Far_Colour: {r: 0.28746888, g: 0.7169812, b: 0.46540967, a: 0}
     - _NearColour: {r: 0.53631186, g: 0.8679245, b: 0.7048182, a: 0}
     - _NearFarRange: {r: 10, g: 22.39, b: 0, a: 0}
-    - _ShadowColour: {r: 0.39470458, g: 1, b: 0, a: 0}
+    - _ShadowColour: {r: 0, g: 0.41420913, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WindWaveContrast: {r: 0, g: 1, b: 0, a: 0}
     - _WindWaveScale: {r: 552.5, g: 108.5, b: 0, a: 0}
