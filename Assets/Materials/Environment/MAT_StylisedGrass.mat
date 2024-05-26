@@ -13,7 +13,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -73,6 +73,14 @@ Material:
         m_Texture: {fileID: 8400000, guid: b1234a281744a1245bb5f90f20c89311, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _WindTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WindWaveTexture:
+        m_Texture: {fileID: 2800000, guid: 66460a7acf65fa54abdbb6701370ec20, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -93,6 +101,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _Colourise_Wind_Waves: 1
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -102,7 +111,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HeightBlend: 0.98
+    - _HeightBlend: 0.91
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -118,6 +127,12 @@ Material:
     - _Terrain_Colour_influence: 1
     - _Terrain_Size: 200
     - _UseTerrianColor: 1
+    - _WindHeight: 0.35
+    - _WindIntensity: 0.2
+    - _WindSwayIntensity: 0.1
+    - _WindSwaySpeed: 0.1
+    - _WindWaveSpeed: 0.2
+    - _Wind_Speed: 0.1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -125,11 +140,13 @@ Material:
     - _Bottom_Colour: {r: 0.2016732, g: 0.41509432, b: 0.4010995, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Far_Colour: {r: 0.2559338, g: 0.5, b: 0.2287736, a: 0}
-    - _NearColour: {r: 0.4038359, g: 0.7075472, b: 0.4989374, a: 0}
+    - _Far_Colour: {r: 0.28746888, g: 0.7169812, b: 0.46540967, a: 0}
+    - _NearColour: {r: 0.53631186, g: 0.8679245, b: 0.7048182, a: 0}
     - _NearFarRange: {r: 10, g: 22.39, b: 0, a: 0}
     - _ShadowColour: {r: 0.39470458, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _WindWaveContrast: {r: 0, g: 1, b: 0, a: 0}
+    - _WindWaveScale: {r: 552.5, g: 108.5, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8042420498317678382
 MonoBehaviour:
