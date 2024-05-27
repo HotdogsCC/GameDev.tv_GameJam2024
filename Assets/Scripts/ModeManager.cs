@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ModeManager : MonoBehaviour
 {
@@ -13,22 +15,33 @@ public class ModeManager : MonoBehaviour
     [SerializeField] int gunDamage = 1;
     [SerializeField] float firingRate = 1;
 
+    [Header("Prefabs")]
+    [SerializeField] private GameObject wallPrefab;
+    [SerializeField] private GameObject barbedWirePrefab;
+    [SerializeField] private GameObject turretPrefab;
+    [SerializeField] private GameObject muzzleFlashPrefab;
+
     [Header("Materials")]
     [SerializeField] private Material canPlaceMat;
     [SerializeField] private Material cantPlaceMat;
     [SerializeField] private Material towerMat;
+    [SerializeField] private Material barbedWireMat;
+    [SerializeField] private Material turretMat;
 
     [Header("Object References")]
     [SerializeField] private Transform playerCamera;
     [SerializeField] private CurrencyManager currencyManager;
     [SerializeField] private GameObject gunGO;
-    [SerializeField] private GameObject wallPrefab;
-    [SerializeField] private GameObject muzzleFlashPrefab;
+    [SerializeField] private GameObject defenceInventory;
     [SerializeField] private Transform muzzleFlashLocation;
 
-    [Header("Text References")]
+    [Header("UI References")]
     [SerializeField] private TextMeshProUGUI modeText;
+    [SerializeField] private Image uiSlot1;
+    [SerializeField] private Image uiSlot2;
+    [SerializeField] private Image uiSlot3;
 
+    private int slotSelected = 1;
     private bool inBuildMode = true;
     private bool lookingAtSomwthingICanSpawn = false;
     private bool canShoot = true;
@@ -37,21 +50,7 @@ public class ModeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (inBuildMode)
-        {
-            modeText.text = "Build Mode";
-
-            gunGO.SetActive(false);
-            currentSelection = Instantiate(wallPrefab, new Vector3(0, -500, 0), Quaternion.identity);
-        }
-        else
-        {
-            modeText.text = "Attack Mode";
-
-            gunGO.SetActive(true);
-            Destroy(currentSelection);
-            currentSelection = null;
-        }
+        ModeReset();
     }
 
     // Update is called once per frame
@@ -75,6 +74,50 @@ public class ModeManager : MonoBehaviour
 
     private void BuildMode()
     {
+        //UI Selection
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            slotSelected = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            slotSelected = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            slotSelected = 3;
+        }
+
+        //Resets stuff
+        uiSlot1.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+        uiSlot2.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+        uiSlot3.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+        Destroy(currentSelection);
+        currentSelection = null;
+
+        //Sets correct solour for selected slot
+        switch (slotSelected)
+        {
+            case 1:
+                uiSlot1.color = new Color(1, 1, 1, 0.5f);
+                currentSelection = Instantiate(wallPrefab, new Vector3(0, -500, 0), Quaternion.identity);
+                break;
+
+            case 2:
+                uiSlot2.color = new Color(1, 1, 1, 0.5f);
+                currentSelection = Instantiate(barbedWirePrefab, new Vector3(0, -500, 0), Quaternion.identity);
+                break;
+
+            case 3:
+                uiSlot3.color = new Color(1, 1, 1, 0.5f);
+                currentSelection = Instantiate(turretPrefab, new Vector3(0, -500, 0), Quaternion.identity);
+                break;
+
+
+            default:
+                break;
+        }
+
         RaycastHit hit;
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, buildRayDistance))
         {
@@ -89,18 +132,76 @@ public class ModeManager : MonoBehaviour
             currentSelection.GetComponent<MeshRenderer>().material = cantPlaceMat;
         }
 
+        //Makes selection red if not enough money
+        switch (slotSelected)
+        {
+            case 1:
+                if (currencyManager.GetCurrentMoneyBalance() < currencyManager.wallCost)
+                {
+                    currentSelection.GetComponent<MeshRenderer>().material = cantPlaceMat;
+                }
+                break;
+
+            case 2:
+                if (currencyManager.GetCurrentMoneyBalance() < currencyManager.barbedWireCost)
+                {
+                    currentSelection.GetComponent<MeshRenderer>().material = cantPlaceMat;
+                }
+                break;
+
+            case 3:
+                if (currencyManager.GetCurrentMoneyBalance() < currencyManager.turretCost)
+                {
+                    currentSelection.GetComponent<MeshRenderer>().material = cantPlaceMat;
+                }
+                break;
+
+
+            default:
+                break;
+        }
+
         //Left Click Input
         if (Input.GetMouseButtonDown(0))
         {
             //Checks player can spawn in the thing
             if (lookingAtSomwthingICanSpawn)
             {
-                //Checks player has enough money
-                if (currencyManager.GetCurrentMoneyBalance() >= currencyManager.wallCost)
+                //Checks player has enough money, and then spawns
+                switch (slotSelected)
                 {
-                    currencyManager.UpdateMoney(-currencyManager.wallCost);
-                    currentSelection.GetComponent<MeshRenderer>().material = towerMat;
-                    currentSelection = Instantiate(wallPrefab);
+                    case 1:
+                        if (currencyManager.GetCurrentMoneyBalance() >= currencyManager.wallCost)
+                        {
+                            currencyManager.UpdateMoney(-currencyManager.wallCost);
+                            currentSelection.GetComponent<MeshRenderer>().material = towerMat;
+                            currentSelection = Instantiate(wallPrefab);
+                        }
+
+                        break;
+
+                    case 2:
+                        if (currencyManager.GetCurrentMoneyBalance() >= currencyManager.barbedWireCost)
+                        {
+                            currencyManager.UpdateMoney(-currencyManager.barbedWireCost);
+                            currentSelection.GetComponent<MeshRenderer>().material = barbedWireMat;
+                            currentSelection = Instantiate(barbedWirePrefab);
+                        }
+
+                        break;
+
+                    case 3:
+                        if (currencyManager.GetCurrentMoneyBalance() >= currencyManager.turretCost)
+                        {
+                            currencyManager.UpdateMoney(-currencyManager.turretCost);
+                            currentSelection.GetComponent<MeshRenderer>().material = turretMat;
+                            currentSelection = Instantiate(turretPrefab);
+                        }
+                        
+                        break;
+
+                    default:
+                        break;
                 }
             }
         }
@@ -131,21 +232,7 @@ public class ModeManager : MonoBehaviour
     {
         inBuildMode = !inBuildMode;
 
-        if (inBuildMode)
-        {
-            modeText.text = "Build Mode";
-
-            gunGO.SetActive(false);
-            currentSelection = Instantiate(wallPrefab);
-        }
-        else
-        {
-            modeText.text = "Attack Mode";
-
-            gunGO.SetActive(true);
-            Destroy(currentSelection);
-            currentSelection = null;
-        }
+        ModeReset();
     }
 
    private IEnumerator WaitAndThen(float time, string thing)
@@ -161,6 +248,26 @@ public class ModeManager : MonoBehaviour
             default:
                 Debug.Log("there is an issue with waitandthen");
                 break;
+        }
+    }
+
+    private void ModeReset()
+    {
+        if (inBuildMode)
+        {
+            modeText.text = "Build Mode";
+
+            gunGO.SetActive(false);
+            defenceInventory.SetActive(true);
+        }
+        else
+        {
+            modeText.text = "Attack Mode";
+
+            gunGO.SetActive(true);
+            defenceInventory.SetActive(false);
+            Destroy(currentSelection);
+            currentSelection = null;
         }
     }
 }

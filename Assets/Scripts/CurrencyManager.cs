@@ -10,6 +10,8 @@ public class CurrencyManager : MonoBehaviour
 
     [Header("Costs")]
     [SerializeField] public int wallCost = 1;
+    [SerializeField] public int barbedWireCost = 1;
+    [SerializeField] public int turretCost = 1;
 
     [Header("TMPro")]
     [SerializeField] private TextMeshProUGUI moneyTextDisplay;
