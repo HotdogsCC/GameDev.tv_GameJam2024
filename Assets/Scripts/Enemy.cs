@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int health = 1;
     [SerializeField] private int money = 1;
 
+    [Header("Object references")]
+    [SerializeField] private GameObject deathVX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         FindObjectOfType<CurrencyManager>().UpdateMoney(money);
+        Instantiate(deathVX, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
