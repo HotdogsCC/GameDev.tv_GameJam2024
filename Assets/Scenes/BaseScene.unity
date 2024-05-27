@@ -608,16 +608,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7961575777676351271, guid: 3154117cc6c251c4eb8aecf403c8de60,
-        type: 3}
-      propertyPath: jumpForce
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7961575777676351271, guid: 3154117cc6c251c4eb8aecf403c8de60,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8284650580630813329, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
       propertyPath: m_Name
