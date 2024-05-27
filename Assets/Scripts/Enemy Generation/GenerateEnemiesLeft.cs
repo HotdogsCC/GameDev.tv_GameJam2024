@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenerateEnemies : MonoBehaviour
+public class GenerateEnemiesLeft : MonoBehaviour
 {
     public GameObject theEnemy;
     public int xPos;
@@ -10,7 +10,7 @@ public class GenerateEnemies : MonoBehaviour
     public int enemyCount;
 
     public BoxCollider box;
-    
+
     void Start()
     {
         StartCoroutine(EnemyDrop());
@@ -18,10 +18,10 @@ public class GenerateEnemies : MonoBehaviour
 
     IEnumerator EnemyDrop()
     {
-        while (enemyCount < 50)
+        while (enemyCount < 25)
         {
-            xPos = Random.Range(175, 194);
-            zPos = Random.Range(61, 74);
+            xPos = Random.Range(6, 32);
+            zPos = Random.Range(100, 132);
             Instantiate(theEnemy, new Vector3(xPos, 1, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount += 1;
