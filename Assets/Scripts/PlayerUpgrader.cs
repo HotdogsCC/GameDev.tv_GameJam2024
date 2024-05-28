@@ -4,17 +4,29 @@ using UnityEngine;
 
 public class PlayerUpgrader : MonoBehaviour
 {
-    [SerializeField]
-    GameObject playerCamera;
+    [SerializeField] private GameObject playerCamera;
+    [SerializeField] private UpgradeMenu upgradeMenu;
 
-    RaycastHit hit;
-    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, bulletRayDistance))
-{
-    //Something was hit
-    if(hit.transform.TryGetComponent<Enemy>(out Enemy enemy))
+    private void Update()
     {
-        //Enemy was hit
-        enemy.DamageTaken(gunDamage);
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, 3))
+            {
+                if (hit.transform.tag == "speed")
+                {
+                    upgradeMenu.SpeedBtn();
+                }
+                if (hit.transform.tag == "fireRate")
+                {
+                    upgradeMenu.FireRateBtn();
+                }
+                if (hit.transform.tag == "damage")
+                {
+                    upgradeMenu.DamageBtn();
+                }
+            }
+        }
     }
-}
 }

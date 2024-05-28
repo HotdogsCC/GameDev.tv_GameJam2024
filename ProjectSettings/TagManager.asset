@@ -6,6 +6,10 @@ TagManager:
   tags:
   - origin
   - defence
+  - speed
+  - fireRate
+  - damage
+  - enemy
   layers:
   - Default
   - TransparentFX

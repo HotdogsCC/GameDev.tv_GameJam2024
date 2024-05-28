@@ -12,8 +12,8 @@ public class ModeManager : MonoBehaviour
     
     [Header("Attack Mode Variables")]
     [SerializeField] float bulletRayDistance = 100f;
-    [SerializeField] int gunDamage = 1;
-    [SerializeField] float firingRate = 1;
+    [SerializeField] public int gunDamage = 1;
+    [SerializeField] public float firingRate = 1;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject wallPrefab;
@@ -122,14 +122,34 @@ public class ModeManager : MonoBehaviour
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, buildRayDistance, 255))
         {
             lookingAtSomwthingICanSpawn = true;
-            currentSelection.GetComponent<MeshRenderer>().material = canPlaceMat;
+            if(currentSelection.TryGetComponent<MeshRenderer>(out MeshRenderer mesh))
+            {
+                mesh.material = canPlaceMat;
+            }
+            else
+            {
+                foreach (MeshRenderer item in currentSelection.GetComponentsInChildren<MeshRenderer>())
+                {
+                    item.material = canPlaceMat;
+                }
+            }
             currentSelection.transform.position = hit.point;
             currentSelection.transform.eulerAngles = new Vector3(0, playerCamera.transform.eulerAngles.y - 90, 0);
         }
         else
         {
             lookingAtSomwthingICanSpawn = false;
-            currentSelection.GetComponent<MeshRenderer>().material = cantPlaceMat;
+            if (currentSelection.TryGetComponent<MeshRenderer>(out MeshRenderer mesh))
+            {
+                mesh.material = cantPlaceMat;
+            }
+            else
+            {
+                foreach (MeshRenderer item in currentSelection.GetComponentsInChildren<MeshRenderer>())
+                {
+                    item.material = cantPlaceMat;
+                }
+            }
         }
 
         //Makes selection red if not enough money
@@ -138,21 +158,51 @@ public class ModeManager : MonoBehaviour
             case 1:
                 if (currencyManager.GetCurrentMoneyBalance() < currencyManager.wallCost)
                 {
-                    currentSelection.GetComponent<MeshRenderer>().material = cantPlaceMat;
+                    if (currentSelection.TryGetComponent<MeshRenderer>(out MeshRenderer mesh))
+                    {
+                        mesh.material = cantPlaceMat;
+                    }
+                    else
+                    {
+                        foreach (MeshRenderer item in currentSelection.GetComponentsInChildren<MeshRenderer>())
+                        {
+                            item.material = cantPlaceMat;
+                        }
+                    }
                 }
                 break;
 
             case 2:
                 if (currencyManager.GetCurrentMoneyBalance() < currencyManager.barbedWireCost)
                 {
-                    currentSelection.GetComponent<MeshRenderer>().material = cantPlaceMat;
+                    if (currentSelection.TryGetComponent<MeshRenderer>(out MeshRenderer mesh))
+                    {
+                        mesh.material = cantPlaceMat;
+                    }
+                    else
+                    {
+                        foreach (MeshRenderer item in currentSelection.GetComponentsInChildren<MeshRenderer>())
+                        {
+                            item.material = cantPlaceMat;
+                        }
+                    }
                 }
                 break;
 
             case 3:
                 if (currencyManager.GetCurrentMoneyBalance() < currencyManager.turretCost)
                 {
-                    currentSelection.GetComponent<MeshRenderer>().material = cantPlaceMat;
+                    if (currentSelection.TryGetComponent<MeshRenderer>(out MeshRenderer mesh))
+                    {
+                        mesh.material = cantPlaceMat;
+                    }
+                    else
+                    {
+                        foreach (MeshRenderer item in currentSelection.GetComponentsInChildren<MeshRenderer>())
+                        {
+                            item.material = cantPlaceMat;
+                        }
+                    }
                 }
                 break;
 
@@ -196,8 +246,12 @@ public class ModeManager : MonoBehaviour
                         if (currencyManager.GetCurrentMoneyBalance() >= currencyManager.turretCost)
                         {
                             currencyManager.UpdateMoney(-currencyManager.turretCost);
-                            currentSelection.GetComponent<MeshRenderer>().material = turretMat;
-                            currentSelection.GetComponent<BoxCollider>().enabled = true;
+                            foreach (MeshRenderer item in currentSelection.GetComponentsInChildren<MeshRenderer>())
+                            {
+                                item.material = turretMat;
+                            }
+                            currentSelection.GetComponent<CapsuleCollider>().enabled = true;
+                            currentSelection.GetComponentInChildren<SphereCollider>().enabled = true;
                             currentSelection = Instantiate(turretPrefab);
                         }
                         

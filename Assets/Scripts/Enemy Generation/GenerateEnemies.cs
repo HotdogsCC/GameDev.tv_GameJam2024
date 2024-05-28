@@ -26,7 +26,7 @@ public class GenerateEnemies : MonoBehaviour
         int i = 0;
         while (i < enemyCount)
         {
-            waveManager.currentAmountOfEnemies++;
+
 
             float angle = Random.Range(0, 2 * Mathf.PI);
             float xComponent = Mathf.Cos(angle) * radius;

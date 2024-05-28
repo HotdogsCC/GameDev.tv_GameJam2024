@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         origin = GameObject.FindGameObjectWithTag("origin");
+        FindObjectOfType<WaveManager>().currentAmountOfEnemies++;
     }
 
     // Update is called once per frame
@@ -41,6 +42,11 @@ public class Enemy : MonoBehaviour
             direction = new Vector3(playerToOriginVector2.x, 0, playerToOriginVector2.y);
             direction = Vector3.Normalize(direction);
             rb.velocity = new Vector3(direction.x * moveSpeed, rb.velocity.y, direction.z * moveSpeed);
+        }
+
+        if(transform.position.y < -10)
+        {
+            Die();
         }
     }
 

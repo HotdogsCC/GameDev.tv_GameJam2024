@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1092706094687029081}
   m_Layer: 7
   m_Name: EnemyCharlie
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +50,8 @@ MonoBehaviour:
   health: 100
   money: 10
   moveSpeed: 3
+  attackDamage: 20
+  timeBetweenAttacks: 1
   deathVX: {fileID: 1949742240123641999, guid: 6b125e3927b394b48bb792a23cefe89f, type: 3}
   damageVX: {fileID: 1949742240123641999, guid: 29a574d524789154eb3b735c7f12717e,
     type: 3}

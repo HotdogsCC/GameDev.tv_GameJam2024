@@ -18,8 +18,9 @@ public class WaveManager : MonoBehaviour
     private void Update()
     {
         //When the wave is over
-        if(!isWaveSpawning && currentAmountOfEnemies == 0)
+        if(!isWaveSpawning && currentAmountOfEnemies <= 0)
         {
+            currentAmountOfEnemies = 0;
             isWaveSpawning = true;
             currentWave++;
             waves[currentWave - 1].gameObject.SetActive(true);
