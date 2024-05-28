@@ -16,7 +16,7 @@ public class UpgradeMenu : MonoBehaviour
         Debug.Log("Fire Rate Increased");
     }
 
-    public void Damage()
+    public void DamageBtn()
     {
         Debug.Log("Damage Increased");
     }
