@@ -51,6 +51,8 @@ MonoBehaviour:
   money: 10
   moveSpeed: 3
   deathVX: {fileID: 1949742240123641999, guid: 6b125e3927b394b48bb792a23cefe89f, type: 3}
+  damageVX: {fileID: 1949742240123641999, guid: 29a574d524789154eb3b735c7f12717e,
+    type: 3}
   origin: {fileID: 0}
 --- !u!54 &-4039256555926577223
 Rigidbody:

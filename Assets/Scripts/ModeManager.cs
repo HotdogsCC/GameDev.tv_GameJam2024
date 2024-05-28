@@ -119,7 +119,7 @@ public class ModeManager : MonoBehaviour
         }
 
         RaycastHit hit;
-        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, buildRayDistance))
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, buildRayDistance, 255))
         {
             lookingAtSomwthingICanSpawn = true;
             currentSelection.GetComponent<MeshRenderer>().material = canPlaceMat;
@@ -175,6 +175,7 @@ public class ModeManager : MonoBehaviour
                         {
                             currencyManager.UpdateMoney(-currencyManager.wallCost);
                             currentSelection.GetComponent<MeshRenderer>().material = towerMat;
+                            currentSelection.GetComponent<BoxCollider>().enabled = true;
                             currentSelection = Instantiate(wallPrefab);
                         }
 
@@ -185,6 +186,7 @@ public class ModeManager : MonoBehaviour
                         {
                             currencyManager.UpdateMoney(-currencyManager.barbedWireCost);
                             currentSelection.GetComponent<MeshRenderer>().material = barbedWireMat;
+                            currentSelection.GetComponent<BoxCollider>().enabled = true;
                             currentSelection = Instantiate(barbedWirePrefab);
                         }
 
@@ -195,6 +197,7 @@ public class ModeManager : MonoBehaviour
                         {
                             currencyManager.UpdateMoney(-currencyManager.turretCost);
                             currentSelection.GetComponent<MeshRenderer>().material = turretMat;
+                            currentSelection.GetComponent<BoxCollider>().enabled = true;
                             currentSelection = Instantiate(turretPrefab);
                         }
                         
