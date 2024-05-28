@@ -1456,7 +1456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildRayDistance: 10
   bulletRayDistance: 100
-  gunDamage: 10000
+  gunDamage: 10
   firingRate: 0.33
   wallPrefab: {fileID: 7420886673394753357, guid: 8a9977635fd64d243a26d36dbb70d78c,
     type: 3}
