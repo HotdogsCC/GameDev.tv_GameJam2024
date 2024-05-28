@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         FindObjectOfType<CurrencyManager>().UpdateMoney(money);
+        FindObjectOfType<WaveManager>().currentAmountOfEnemies--;
         Instantiate(deathVX, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
