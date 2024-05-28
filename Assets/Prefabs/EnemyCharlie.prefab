@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9119567709006466526}
   - component: {fileID: 9119567709006466522}
-  - component: {fileID: 3330219667884854433}
   - component: {fileID: -4039256555926577223}
+  - component: {fileID: 1092706094687029081}
   m_Layer: 7
   m_Name: EnemyCharlie
   m_TagString: Untagged
@@ -52,19 +52,6 @@ MonoBehaviour:
   moveSpeed: 3
   deathVX: {fileID: 1949742240123641999, guid: 6b125e3927b394b48bb792a23cefe89f, type: 3}
   origin: {fileID: 0}
---- !u!135 &3330219667884854433
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9119567709006466341}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: -0.55, z: 0}
 --- !u!54 &-4039256555926577223
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -73,7 +60,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9119567709006466341}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -81,6 +68,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!136 &1092706094687029081
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119567709006466341}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.32270592
+  m_Height: 0.85881317
+  m_Direction: 0
+  m_Center: {x: 0.030000001, y: -0.51396483, z: 0.057028353}
 --- !u!1001 &2004671728018423552
 PrefabInstance:
   m_ObjectHideFlags: 0

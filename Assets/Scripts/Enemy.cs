@@ -35,7 +35,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = direction * moveSpeed;
+        rb.velocity = new Vector3(direction.x * moveSpeed, rb.velocity.y, direction.z * moveSpeed);
+        //rb.velocity = direction * moveSpeed;
     }
 
     public void DamageTaken(int damageTaken)
