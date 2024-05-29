@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339024252079352639}
-  m_Mesh: {fileID: 1409053094661556581, guid: 8d68237ae0db3b041bc6867dc219b66b, type: 3}
+  m_Mesh: {fileID: 4824589497415381561, guid: 8d68237ae0db3b041bc6867dc219b66b, type: 3}
 --- !u!23 &6954605995165712250
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretSwivel: {fileID: 7941317445624289147}
+  damage: 50
   fireRate: 2
   enemies: []
 --- !u!1 &5256066298988522106
@@ -266,7 +267,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6823364181693057697}
-  m_Mesh: {fileID: -164186702791364680, guid: 8d68237ae0db3b041bc6867dc219b66b, type: 3}
+  m_Mesh: {fileID: -6208076769571940015, guid: 8d68237ae0db3b041bc6867dc219b66b, type: 3}
 --- !u!23 &7251768991962466865
 MeshRenderer:
   m_ObjectHideFlags: 0
