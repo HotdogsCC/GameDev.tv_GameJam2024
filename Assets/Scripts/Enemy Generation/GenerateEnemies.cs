@@ -32,7 +32,7 @@ public class GenerateEnemies : MonoBehaviour
             float xComponent = Mathf.Cos(angle) * radius;
             float zComponent = Mathf.Sin(angle) * radius;
 
-            Vector3 position = new Vector3(origin.position.x + xComponent, 1, origin.position.z + zComponent);
+            Vector3 position = new Vector3(origin.position.x + xComponent, 60, origin.position.z + zComponent);
 
             Instantiate(theEnemy, position, Quaternion.identity);
             yield return new WaitForSeconds(0.1f);

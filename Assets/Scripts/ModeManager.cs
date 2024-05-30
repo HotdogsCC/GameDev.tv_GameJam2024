@@ -26,7 +26,8 @@ public class ModeManager : MonoBehaviour
     [SerializeField] private Material cantPlaceMat;
     [SerializeField] private Material towerMat;
     [SerializeField] private Material barbedWireMat;
-    [SerializeField] private Material turretMat;
+    [SerializeField] private Material turretMat1;
+    [SerializeField] private Material turretMat2;
 
     [Header("Object References")]
     [SerializeField] private Transform playerCamera;
@@ -246,9 +247,20 @@ public class ModeManager : MonoBehaviour
                         if (currencyManager.GetCurrentMoneyBalance() >= currencyManager.turretCost)
                         {
                             currencyManager.UpdateMoney(-currencyManager.turretCost);
+                            int i = 0;
                             foreach (MeshRenderer item in currentSelection.GetComponentsInChildren<MeshRenderer>())
                             {
-                                item.material = turretMat;
+                                if(i == 0)
+                                {
+                                    item.material = turretMat1;
+                                }
+                                else
+                                {
+                                    item.material = turretMat2;
+                                }
+
+                                
+                                i++;
                             }
                             currentSelection.GetComponent<CapsuleCollider>().enabled = true;
                             currentSelection.GetComponentInChildren<SphereCollider>().enabled = true;
@@ -273,7 +285,7 @@ public class ModeManager : MonoBehaviour
             canShoot = false;
             StartCoroutine(WaitAndThen(firingRate, "gunWait"));
             RaycastHit hit;
-            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, bulletRayDistance))
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, bulletRayDistance, 255))
             {
                 //Something was hit
                 if(hit.transform.TryGetComponent<Enemy>(out Enemy enemy))

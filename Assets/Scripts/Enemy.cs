@@ -62,9 +62,14 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        FindObjectOfType<CurrencyManager>().UpdateMoney(money);
-        FindObjectOfType<WaveManager>().currentAmountOfEnemies--;
         Instantiate(deathVX, transform.position, Quaternion.identity);
+        FindObjectOfType<CurrencyManager>().UpdateMoney(money);
+        SilentlyDie();
+    }
+
+    private void SilentlyDie()
+    {
+        FindObjectOfType<WaveManager>().currentAmountOfEnemies--;
         Destroy(gameObject);
     }
 
@@ -74,6 +79,12 @@ public class Enemy : MonoBehaviour
         {
             attacking = true;
             StartCoroutine(Attacking(collision));
+        }
+
+        if(collision.transform.tag == "origin")
+        {
+            collision.transform.GetComponent<Tree>().Damaged();
+            SilentlyDie();
         }
     }
 
