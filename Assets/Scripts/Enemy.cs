@@ -43,10 +43,14 @@ public class Enemy : MonoBehaviour
             direction = Vector3.Normalize(direction);
             rb.velocity = new Vector3(direction.x * moveSpeed, rb.velocity.y, direction.z * moveSpeed);
         }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
 
         if(transform.position.y < -10)
         {
-            Die();
+            SilentlyDie();
         }
     }
 

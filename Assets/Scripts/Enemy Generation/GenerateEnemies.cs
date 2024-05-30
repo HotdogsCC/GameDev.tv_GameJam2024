@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class GenerateEnemies : MonoBehaviour
 {
-    [SerializeField] private GameObject theEnemy;
-    [SerializeField] private int enemyCount;
+    [SerializeField] private List<GameObject> enemies = new List<GameObject>();
     [SerializeField] private int startingMoney;
 
     [SerializeField] private WaveManager waveManager;
@@ -24,7 +23,7 @@ public class GenerateEnemies : MonoBehaviour
     {
         waveManager.isWaveSpawning = true;
         int i = 0;
-        while (i < enemyCount)
+        while (i < enemies.Count)
         {
 
 
@@ -34,7 +33,7 @@ public class GenerateEnemies : MonoBehaviour
 
             Vector3 position = new Vector3(origin.position.x + xComponent, 60, origin.position.z + zComponent);
 
-            Instantiate(theEnemy, position, Quaternion.identity);
+            Instantiate(enemies[i], position, Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             i += 1;
         }
