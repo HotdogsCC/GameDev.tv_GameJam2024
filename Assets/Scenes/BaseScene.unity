@@ -1772,6 +1772,11 @@ PrefabInstance:
       objectReference: {fileID: 373541002}
     - target: {fileID: 7380083205999474798, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
+      propertyPath: startingMoney
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380083205999474798, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
       propertyPath: enemies.Array.size
       value: 75
       objectReference: {fileID: 0}
@@ -2982,6 +2987,11 @@ PrefabInstance:
       objectReference: {fileID: 373541002}
     - target: {fileID: 7380083206002812015, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
+      propertyPath: startingMoney
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380083206002812015, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
       propertyPath: enemies.Array.size
       value: 10
       objectReference: {fileID: 0}
@@ -3056,6 +3066,11 @@ PrefabInstance:
       propertyPath: origin
       value: 
       objectReference: {fileID: 373541002}
+    - target: {fileID: 7380083206305499871, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
+      propertyPath: startingMoney
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 7380083206305499871, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
       propertyPath: enemies.Array.size
@@ -3366,6 +3381,11 @@ PrefabInstance:
       propertyPath: origin
       value: 
       objectReference: {fileID: 373541002}
+    - target: {fileID: 7380083206499852380, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
+      propertyPath: startingMoney
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 7380083206499852380, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
       propertyPath: enemies.Array.size
@@ -4578,6 +4598,11 @@ PrefabInstance:
       objectReference: {fileID: 373541002}
     - target: {fileID: 7380083206544316349, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
+      propertyPath: startingMoney
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380083206544316349, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
       propertyPath: enemies.Array.size
       value: 20
       objectReference: {fileID: 0}
@@ -4706,6 +4731,11 @@ PrefabInstance:
       propertyPath: origin
       value: 
       objectReference: {fileID: 373541002}
+    - target: {fileID: 7380083206704984612, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
+      propertyPath: startingMoney
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7380083206704984612, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
       propertyPath: enemies.Array.size
@@ -5318,6 +5348,11 @@ PrefabInstance:
       objectReference: {fileID: 373541002}
     - target: {fileID: 7380083207282873572, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
+      propertyPath: startingMoney
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380083207282873572, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
       propertyPath: enemies.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -5356,6 +5391,11 @@ PrefabInstance:
       propertyPath: origin
       value: 
       objectReference: {fileID: 373541002}
+    - target: {fileID: 7380083207293158168, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
+      propertyPath: startingMoney
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 7380083207293158168, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
       propertyPath: enemies.Array.size
@@ -35368,6 +35408,11 @@ PrefabInstance:
       objectReference: {fileID: 373541002}
     - target: {fileID: 7380083207388777295, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
+      propertyPath: startingMoney
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380083207388777295, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
       propertyPath: enemies.Array.size
       value: 500
       objectReference: {fileID: 0}
@@ -41378,6 +41423,11 @@ PrefabInstance:
       objectReference: {fileID: 373541002}
     - target: {fileID: 7380083207769708472, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
+      propertyPath: startingMoney
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380083207769708472, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
       propertyPath: enemies.Array.size
       value: 200
       objectReference: {fileID: 0}
@@ -44386,6 +44436,11 @@ PrefabInstance:
       propertyPath: origin
       value: 
       objectReference: {fileID: 373541002}
+    - target: {fileID: 7380083207814248296, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
+      propertyPath: startingMoney
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 7380083207814248296, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
       propertyPath: enemies.Array.size
