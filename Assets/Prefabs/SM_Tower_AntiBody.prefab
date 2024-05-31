@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretSwivel: {fileID: 7941317445624289147}
-  damage: 50
+  damage: 10
   fireRate: 2
   enemies: []
 --- !u!1 &5256066298988522106

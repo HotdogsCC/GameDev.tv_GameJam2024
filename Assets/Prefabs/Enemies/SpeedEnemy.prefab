@@ -47,11 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832d2708eefad614f8d2c33202c3befa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 60
-  money: 10
-  moveSpeed: 15
-  attackDamage: 10
-  timeBetweenAttacks: 1
+  health: 15
+  money: 0
+  moveSpeed: 5
+  attackDamage: 5
+  timeBetweenAttacks: 2
   deathVX: {fileID: 1949742240123641999, guid: 6b125e3927b394b48bb792a23cefe89f, type: 3}
   damageVX: {fileID: 1949742240123641999, guid: 29a574d524789154eb3b735c7f12717e,
     type: 3}
