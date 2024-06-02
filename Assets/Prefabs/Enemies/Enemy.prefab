@@ -56,6 +56,8 @@ MonoBehaviour:
   damageVX: {fileID: 1949742240123641999, guid: 29a574d524789154eb3b735c7f12717e,
     type: 3}
   origin: {fileID: 0}
+  player: {fileID: 0}
+  enemySwivelPoint: {fileID: 1662795288810832465}
 --- !u!54 &-4039256555926577223
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -175,6 +177,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b9dd96b307a28140be59606455ccd6c, type: 3}
+--- !u!1 &1662795288810832465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6b9dd96b307a28140be59606455ccd6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2004671728018423552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2042592634252499179 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6b9dd96b307a28140be59606455ccd6c,

@@ -17,17 +17,22 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject deathVX;
     [SerializeField] private GameObject damageVX;
     [SerializeField] private GameObject origin;
+    [SerializeField] private PlayerMovement player;
+    [SerializeField] private GameObject enemySwivelPoint;
     private Rigidbody rb;
-    private Vector3 direction;
-    private Vector2 playerVector2;
+    private Vector3 moveDirection;
+    private Vector2 enemyVector2;
     private Vector2 originVector2;
-    private Vector2 playerToOriginVector2;
+    private Vector2 playerVector2; 
+    private Vector2 enemyToOriginVector2;
+    private Vector2 enemyToPlayerVector2;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         origin = GameObject.FindGameObjectWithTag("origin");
+        player = FindObjectOfType<PlayerMovement>();
         FindObjectOfType<WaveManager>().currentAmountOfEnemies++;
     }
 
@@ -36,12 +41,18 @@ public class Enemy : MonoBehaviour
     {
         if (!attacking)
         {
-            playerVector2 = new Vector2(transform.position.x, transform.position.z);
+            enemyVector2 = new Vector2(transform.position.x, transform.position.z);
             originVector2 = new Vector2(origin.transform.position.x, origin.transform.position.z);
-            playerToOriginVector2 = originVector2 - playerVector2;
-            direction = new Vector3(playerToOriginVector2.x, 0, playerToOriginVector2.y);
-            direction = Vector3.Normalize(direction);
-            rb.velocity = new Vector3(direction.x * moveSpeed, rb.velocity.y, direction.z * moveSpeed);
+            enemyToOriginVector2 = originVector2 - enemyVector2;
+            moveDirection = new Vector3(enemyToOriginVector2.x, 0, enemyToOriginVector2.y);
+            moveDirection = Vector3.Normalize(moveDirection);
+            rb.velocity = new Vector3(moveDirection.x * moveSpeed, rb.velocity.y, moveDirection.z * moveSpeed);
+
+            //playerVector2 = new Vector2(player.transform.position.x, player.transform.position.z);
+            //enemyToPlayerVector2 = playerVector2 - enemyVector2;
+            //float feta = Mathf.Atan2(enemyToPlayerVector2.x, enemyToPlayerVector2.y);
+            float feta = Mathf.Atan2(enemyToOriginVector2.x, enemyToOriginVector2.y);
+            enemySwivelPoint.transform.eulerAngles = new Vector3(0, feta * Mathf.Rad2Deg, 0);
         }
         else
         {
