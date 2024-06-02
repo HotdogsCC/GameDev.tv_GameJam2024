@@ -19,9 +19,6 @@ public class SceneLoader : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneAt(2))
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
+        
     }
 }

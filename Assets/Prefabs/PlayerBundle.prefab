@@ -1604,12 +1604,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedLvl: 1
   speedValues: 05000000070000000a0000000e000000
+  speedPrices: 0000000096000000fa00000090010000
   fireRateLvl: 1
   fireRateValues: 0300000004000000060000000a000000
+  fireRatePrices: 0000000096000000fa00000090010000
   damageLvl: 1
-  damageValues: 19000000230000003200000064000000
+  damageValues: 0f0000001e0000002d0000003c000000
+  damagePrices: 0000000096000000fa00000090010000
   player: {fileID: 7961575777676351271}
   modeManager: {fileID: 4112109719501797614}
+  speedText: {fileID: 0}
+  fireRateText: {fileID: 0}
+  damageText: {fileID: 0}
+  speedUpgrader: {fileID: 0}
+  fireRateUpgrader: {fileID: 0}
+  damageUpgrader: {fileID: 0}
+  currencyManager: {fileID: 0}
 --- !u!114 &1427675890
 MonoBehaviour:
   m_ObjectHideFlags: 0
