@@ -1469,6 +1469,8 @@ MonoBehaviour:
     type: 3}
   muzzleFlashPrefab: {fileID: 1949742240123641999, guid: dffad0fd15b42424ba0ec97bafa24b74,
     type: 3}
+  bulletTrail: {fileID: 1238982953443493631, guid: 7dc2a596c05a6ae4a9e3ee63d9920978,
+    type: 3}
   canPlaceMat: {fileID: 2100000, guid: ecc3501552bc4e446b04ab0dbd0e4c58, type: 2}
   cantPlaceMat: {fileID: 2100000, guid: 22eb4b80c02691c43900d01be0660e11, type: 2}
   towerMat: {fileID: 2100000, guid: 14d87cc1153a80b44aa683b830d2e624, type: 2}

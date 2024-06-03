@@ -20,6 +20,7 @@ public class ModeManager : MonoBehaviour
     [SerializeField] private GameObject barbedWirePrefab;
     [SerializeField] private GameObject turretPrefab;
     [SerializeField] private GameObject muzzleFlashPrefab;
+    [SerializeField] private GameObject bulletTrail;
 
     [Header("Materials")]
     [SerializeField] private Material canPlaceMat;
@@ -287,11 +288,14 @@ public class ModeManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, bulletRayDistance, 255))
             {
+                GameObject trail = Instantiate(bulletTrail, muzzleFlashLocation.position, muzzleFlashLocation.rotation);
+                trail.GetComponent<Trail>().SetTargetPosition(hit.point);
                 //Something was hit
-                if(hit.transform.TryGetComponent<Enemy>(out Enemy enemy))
+                if (hit.transform.TryGetComponent<Enemy>(out Enemy enemy))
                 {
                     //Enemy was hit
                     enemy.DamageTaken(gunDamage);
+                    
                 }
             }
         }
