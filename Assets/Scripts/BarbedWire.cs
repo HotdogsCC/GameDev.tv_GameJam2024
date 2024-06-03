@@ -46,11 +46,25 @@ public class BarbedWire : MonoBehaviour
         if (enemies.Count > 0)
         {
             health--;
+            List<Enemy> deadEnemies = new List<Enemy>();
             foreach (Enemy enemy in enemies)
             {
-                enemy.DamageTaken(damage);
-                StartCoroutine(Wait());
+                if(enemy == null)
+                {
+                    deadEnemies.Add(enemy);
+                }
+                else
+                {
+                    enemy.DamageTaken(damage);
+                    StartCoroutine(Wait());
+                }     
             }
+
+            foreach (Enemy deadEnemy in deadEnemies)
+            {
+                enemies.Remove(deadEnemy);
+            }
+           
         }
         else
         {
