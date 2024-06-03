@@ -12,13 +12,24 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadLoseScreen()
     {
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(2);
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
 
-    private void Start()
+    public void LoadTitleScreen()
     {
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene(0);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void QuitTheGame()
+    {
+        Application.Quit();
     }
 }
