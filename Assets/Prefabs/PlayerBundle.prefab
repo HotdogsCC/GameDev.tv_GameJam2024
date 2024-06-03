@@ -1463,7 +1463,7 @@ MonoBehaviour:
   firingRate: 0.2
   wallPrefab: {fileID: 7420886673394753357, guid: 8a9977635fd64d243a26d36dbb70d78c,
     type: 3}
-  barbedWirePrefab: {fileID: 7420886673394753357, guid: 8a9977635fd64d243a26d36dbb70d78c,
+  barbedWirePrefab: {fileID: 1867801444190791544, guid: 06c3629c74ede9342875b1e22f07ef7e,
     type: 3}
   turretPrefab: {fileID: 5256066298988522106, guid: 41c98df888977a14eaeb8d506b3e9a24,
     type: 3}
@@ -1474,7 +1474,8 @@ MonoBehaviour:
   canPlaceMat: {fileID: 2100000, guid: ecc3501552bc4e446b04ab0dbd0e4c58, type: 2}
   cantPlaceMat: {fileID: 2100000, guid: 22eb4b80c02691c43900d01be0660e11, type: 2}
   towerMat: {fileID: 2100000, guid: 14d87cc1153a80b44aa683b830d2e624, type: 2}
-  barbedWireMat: {fileID: 2100000, guid: 14d87cc1153a80b44aa683b830d2e624, type: 2}
+  barbedWireMat1: {fileID: 2100000, guid: 07653d8ff55923641b0996c5a32e2c0e, type: 2}
+  barbedWireMat2: {fileID: 2100000, guid: f560d5d57d8846c4e893230764ba537e, type: 2}
   turretMat1: {fileID: 2100000, guid: 2dc75f6ba55141342b1d3142b83cfea5, type: 2}
   turretMat2: {fileID: 2100000, guid: c8f99676102609b438c630e4553d97ed, type: 2}
   playerCamera: {fileID: 7961575776543195127}
@@ -2053,7 +2054,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 1b91fe266336ffd4abe25fce7b9619b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -92,7 +92,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1342093755456716226}
-  m_Layer: 0
+  - component: {fileID: 2159666065261764560}
+  - component: {fileID: 7947125992403719024}
+  m_Layer: 8
   m_Name: SM_BarbedWire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +108,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867801444190791544}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 152.36, y: -0.29182, z: 138.11069}
   m_LocalScale: {x: 0.014514, y: 0.014626999, z: 0.01}
   m_ConstrainProportionsScale: 0
@@ -117,6 +119,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2159666065261764560
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867801444190791544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 202.09, y: 121.78, z: 114.83}
+  m_Center: {x: 0, y: 62.5, z: 0}
+--- !u!114 &7947125992403719024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867801444190791544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8a34a4c1c7f5e4fa095dab3a343744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 2
+  damage: 5
+  health: 20
 --- !u!1 &2086244446535700382
 GameObject:
   m_ObjectHideFlags: 0

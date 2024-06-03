@@ -26,7 +26,8 @@ public class ModeManager : MonoBehaviour
     [SerializeField] private Material canPlaceMat;
     [SerializeField] private Material cantPlaceMat;
     [SerializeField] private Material towerMat;
-    [SerializeField] private Material barbedWireMat;
+    [SerializeField] private Material barbedWireMat1;
+    [SerializeField] private Material barbedWireMat2;
     [SerializeField] private Material turretMat1;
     [SerializeField] private Material turretMat2;
 
@@ -147,10 +148,25 @@ public class ModeManager : MonoBehaviour
             }
             else
             {
-                foreach (MeshRenderer item in currentSelection.GetComponentsInChildren<MeshRenderer>())
+                if (slotSelected == 2)
                 {
-                    item.material = cantPlaceMat;
+                    foreach (Transform item in currentSelection.GetComponentsInChildren<Transform>())
+                    {
+                        foreach (MeshRenderer item2 in item.GetComponentsInChildren<MeshRenderer>())
+                        {
+                            item2.material = canPlaceMat;
+                        }
+                    }
                 }
+                else
+                {
+                    foreach (MeshRenderer item in currentSelection.GetComponentsInChildren<MeshRenderer>())
+                    {
+                        item.material = canPlaceMat;
+                    }
+                }
+
+                
             }
         }
 
@@ -183,9 +199,12 @@ public class ModeManager : MonoBehaviour
                     }
                     else
                     {
-                        foreach (MeshRenderer item in currentSelection.GetComponentsInChildren<MeshRenderer>())
+                        foreach (Transform item in currentSelection.GetComponentsInChildren<Transform>())
                         {
-                            item.material = cantPlaceMat;
+                            foreach (MeshRenderer item2 in item.GetComponentsInChildren<MeshRenderer>())
+                            {
+                                item2.material = cantPlaceMat;
+                            }
                         }
                     }
                 }
@@ -237,7 +256,22 @@ public class ModeManager : MonoBehaviour
                         if (currencyManager.GetCurrentMoneyBalance() >= currencyManager.barbedWireCost)
                         {
                             currencyManager.UpdateMoney(-currencyManager.barbedWireCost);
-                            currentSelection.GetComponent<MeshRenderer>().material = barbedWireMat;
+                            int i = 1;
+                            foreach (Transform item in currentSelection.GetComponentsInChildren<Transform>())
+                            {
+                                foreach (MeshRenderer item2 in item.GetComponentsInChildren<MeshRenderer>())
+                                {
+                                    if(i%3 == 0)
+                                    {
+                                        item2.material = barbedWireMat2;
+                                    }
+                                    else
+                                    {
+                                        item2.material = barbedWireMat1;
+                                    }
+                                    i++;
+                                }
+                            }
                             currentSelection.GetComponent<BoxCollider>().enabled = true;
                             currentSelection = Instantiate(barbedWirePrefab);
                         }
