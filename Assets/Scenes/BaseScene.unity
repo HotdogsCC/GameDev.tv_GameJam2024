@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: c897ae374540a4643a4f8839fb50d6ae,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2765,6 +2766,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2876867141287119545, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876867141287119545, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5186129800974672735, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
       propertyPath: m_RootOrder
@@ -2818,6 +2829,21 @@ PrefabInstance:
     - target: {fileID: 5186129800974672735, guid: 3154117cc6c251c4eb8aecf403c8de60,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6264050349719968870, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6264050349719968870, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6264050349719968870, guid: 3154117cc6c251c4eb8aecf403c8de60,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7380083205999474798, guid: 3154117cc6c251c4eb8aecf403c8de60,
@@ -4012,6 +4038,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 805048167, guid: 3dcfb1238afd4444db677a506907472f, type: 3}
+      propertyPath: rah
+      value: 
+      objectReference: {fileID: 2041945081}
+    - target: {fileID: 805048167, guid: 3dcfb1238afd4444db677a506907472f, type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 2041945081}
+    - target: {fileID: 805048167, guid: 3dcfb1238afd4444db677a506907472f, type: 3}
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 1878771674}
@@ -4634,7 +4668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
-  priority: 0
+  priority: 1
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 50c5ab4ed8919ed4e8442e8210a61ee0, type: 2}

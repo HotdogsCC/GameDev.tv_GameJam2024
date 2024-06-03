@@ -9,6 +9,7 @@ public class TurretTriggerDetection : MonoBehaviour
     [SerializeField] private int damage = 50;
     [SerializeField] private int fireRate = 2;
     [SerializeField] private List<Enemy> enemies = new List<Enemy>();
+    [SerializeField] private GameObject particles;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -42,6 +43,7 @@ public class TurretTriggerDetection : MonoBehaviour
     {
         if (enemies.Count > 0)
         {
+            particles.SetActive(true);
             if (enemies[0] != null)
             {
                 Vector2 turretVector2 = new Vector2(transform.position.x, transform.position.z);
@@ -55,6 +57,10 @@ public class TurretTriggerDetection : MonoBehaviour
                 enemies.Remove(enemies[0]);
                 Swivel();
             }
+        }
+        else
+        {
+            particles.SetActive(false);
         }
     }
 
